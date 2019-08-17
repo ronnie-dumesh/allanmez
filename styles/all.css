@@ -1,0 +1,333 @@
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../fonts/PlayfairDisplaySC-Regular.ttf');
+}
+
+body {
+  font-family: Playfair, Palatino;
+  font-size: 14pt;
+}
+
+/*Project titles */
+h2 {
+  text-align: right;
+}
+
+/*Project descriptions */
+p {
+  text-align: center;
+  font-family: monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+/*Down arrow next to Allan name should be hidden in desktop*/
+.Allannamemobiledown {
+  display: none;
+}
+
+/* Holds title block (.allanheader), nav links, and icons (.socialmediaicons)*/
+.container {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Holds everything but the side container*/
+.maincontent {
+  display: flex;
+  flex-grow: 9;
+  top: 0;
+  bottom: 0;
+  min-height: 100%;
+  border-left: solid 1px;
+  height:100vh;
+}
+
+/*Flexboxes for art grids*/
+.row {
+  margin: 10px 30px 0px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.rowimage {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0px 5px;
+  padding: 10px;
+  align-items: center;
+}
+
+.rowimage img {
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.rowimage p {
+  max-width: inherit;
+  font-size: 10pt;
+  display: inline-block;
+  word-break: break-all;
+  white-space: normal;
+}
+
+/*Header styling */
+header {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav ul li{
+  font-size: 14pt;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  padding-bottom: 10px;
+  font-size: 12pt;
+  text-align: left;
+  color: #747474;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #747474;
+}
+
+a:visited {
+  color: #747474;
+}
+a:hover {
+  color: black;
+}
+
+.allanheader h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.socialmediaicon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+header h1 {
+  text-align: center;
+  margin: auto;
+  word-wrap: break-word;
+}
+
+header img {
+  display: inline-block;
+  padding-top: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+/*Mobile version of social media icons hidden in desktop*/
+footer {
+  display: none;
+}
+
+#artdropdownstart:hover, #architecturedropdownstart:hover{
+  cursor:pointer
+}
+
+/*Architecture pages styling */
+#homeSlideshow {
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+#diiMain, #yorkMain, #diMain h2 {
+  margin-right: 10px;
+}
+
+#diiMain p, #yorkMain, #diMain p{
+  max-width: 800px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#diiSlideShow, #yorkSlideShow, #diSlideShow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 800px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#diiSlideShow img, #yorkSlideShow img, #diSlideShow img{
+  display: inline-block;
+  width: 600px;
+  max-width: 100%;
+}
+
+#yorkSlideShow img{
+  max-height: 450px;
+  max-width: 100%
+}
+
+#back, #next{
+  display: inline-block;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+/*About page styling */
+#allanImage {
+  position: relative;
+  width: 45%;
+  display: block;
+  margin: auto;
+}
+
+#bio {
+  margin: 20px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.fullimage {
+  background-color: #fefefe;
+  margin: 5%; /* 15% from the top and centered */
+  padding: 20px;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+cite {
+  margin-top: 20px;
+  font-size: 8px;
+  line-height: 1px;
+}
+
+
+@media screen and (max-width: 600px) {
+  header {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+/*Down arrow next to Allan name appears in mobile version */
+  .Allannamemobiledown {
+    display: inline;
+    cursor: pointer;
+  }
+
+/*Hides all of nav bar except Allan name when switching to mobile version */
+  .mobilehidden {
+    display: none;
+  }
+
+  .maincontent {
+    border-left: none;
+    display: block;
+    margin-top: 60px;
+  }
+
+/*Moves main content down out of the way when mobile nav dropdown is toggled */
+  .mainpush {
+    margin-top: 450px;
+  }
+
+  .allanheader h1 {
+    text-align: center;
+  }
+
+  .homeSlideshow {
+    width: 100%;
+    margin-top: 40px;
+    display: block;
+  }
+
+  .container {
+    display: block;
+  }
+
+  #allanImage {
+    position: static;
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+  }
+
+  #bio {
+    margin-top: 20px;
+    width: 75%;
+    text-align: center;
+  }
+
+/*Mobile version of social media links */
+  footer {
+    display: inline;
+    text-align: center;
+  }
+
+/*Turns off original social media links */
+  .socialmediatrio {
+    display: none;
+  }
+
+  .row, #artMain, #diiSlideShow, #yorkSlideShow, #diSlideShow, .maincontent {
+      flex-flow: column;
+      flex-wrap: wrap;
+  }
+
+  #back, #next {
+      height: 50px;
+      margin: 0px;
+      padding: 0px;
+      width: 300px;
+  }
+
+  .rowimage, #diSlideShowImage img, #diSlideShowImage img, #yorkSlideShowImage img{
+      height: 400px;
+      width: 400px;
+      margin-right: 25px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+  }
+}
